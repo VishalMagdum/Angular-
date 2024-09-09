@@ -1,0 +1,102 @@
+<div class="btn-wrap">
+  <h5>
+    1. String Interpolation Always Returns a String: When you use string
+    interpolation like this:
+  </h5>
+
+  <!-- "<button disabled="{{ isDisabled }}">Disabled By String Interpolation</button>" -->
+  <button disabled="{isDisabled}">Disabled By String Interpolation</button>
+
+  <p>
+    Angular evaluates the expression inside the double curly braces and converts
+    it to a string. For instance:
+  </p>
+  <p>
+    -If isDisabled is false, Angular will set the disabled attribute to the
+    string "false".
+  </p>
+  <p>-If isDisabled is true, it will set it to the string "true".</p>
+
+  <h5>
+    2.Proper Way to Bind Boolean Attributes: To correctly bind a boolean value
+    to an HTML attribute in Angular, you need to use property binding. This way,
+    Angular will directly interpret the boolean value instead of converting it
+    to a string:
+  </h5>
+  <button [disabled]="isDisabled">Disabled By Property Binding</button>
+</div>
+<div class="wrap">
+  <h3>Css Clss Binding</h3>
+  <button [class.active]="isActive" [class.not-active]="!isActive">
+    Click Me
+  </button>
+  <button [class.active]="isDisabled">Click me</button>
+
+  <button [class.apple]="fruitName == 'Apple'">
+    Fruit ninja {{ fruitName }}
+  </button>
+</div>
+
+<div class="wrap">
+  <h3>style Binding</h3>
+  <button
+    [style.backgroundColor]="isActive ? 'red' : 'blue'"
+    [style.border]="isActive ? '5px solid yellow' : '5px solid black'"
+  >
+    Click me
+  </button>
+</div>
+
+<div class="wrap">
+  <h3>Event Binding</h3>
+  <button (click)="buttonClick()">Click Me</button>
+  <button (mouseover)="mouseOver()">Mouse Over</button>
+  <input type="text" (keyup)="onPressed($event)" />
+
+  <input type="text" (keyup.enter)="keyUpFiltering($event)" /> // this is called
+  event filtering in angular
+  <input type="text" (keyup.A)="keyUpFiltering($event)" /> // this is called
+  event filtering in angular
+</div>
+
+<div class="wrap">
+  <h3>Template vaiable</h3>
+  <input
+    type="text"
+    placeholder="user"
+    id="user"
+    (keyup.enter)="TVenter(user)"
+    #user
+  />
+</div>
+
+<div class="wrap">
+  <h3>Two Way Data Binding</h3>
+  <p>
+    Two-way data binding in Angular allows synchronization between the model
+    (component's class property) and the view (template). When the user updates
+    the view, the model is automatically updated, and when the model changes,
+    the view reflects the changes instantly. This ensures seamless communication
+    between the UI and the underlying logic.
+  </p>
+  <input
+    [value]="userName"
+    type="text"
+    placeholder="user"
+    id="userInput1"
+    #username
+    (keyup.enter)="handleUserName(username.value)"
+  />
+
+  <input
+    type="text"
+    [placeholder]="'Enter name to see 2 way data binding'"
+    [(ngModel)]="userName2"
+  />
+  <p>
+    this is how two may data binding work with ngModel is angular
+    <span [style.color]="'red'" [style.fontWeight]="'700'">
+      {{ userName2 }}</span
+    >
+  </p>
+</div>

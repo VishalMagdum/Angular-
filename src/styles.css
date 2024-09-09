@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+button {
+  width: auto;
+}
