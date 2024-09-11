@@ -4,6 +4,8 @@ import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
+import { NgModel } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ import { AngularDirectivesComponent } from './angular-directives/angular-directi
     HeaderComponent,
     DataBindingComponent,
     AngularDirectivesComponent,
+    NgIf,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

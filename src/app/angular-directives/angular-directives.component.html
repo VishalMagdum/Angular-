@@ -14,4 +14,61 @@
     These directives alter the layout of the DOM by adding or removing elements.
     common examples include &#64;If, &#64;For and &#64;Switch.
   </p>
+  <ul>
+    <li>
+      <strong>&#64;If</strong> - This directive is used to add or remove an
+      element from the DOM based on a condition.
+    </li>
+    <li>
+      <strong>&#64;For</strong> - This directive is used to repeat a block of
+      HTML code for a number of times.
+    </li>
+    <li>
+      <strong>&#64;Switch</strong> - This directive is used to switch between
+      multiple elements.
+    </li>
+  </ul>
+
+  <h6>old way to use Structural Directives</h6>
+  <div>
+    <p>example of Structural Directives</p>
+    <h3 *ngIf="isLogedIn">{{ userName }}</h3>
+    <h3 *ngIf="!isLogedIn">User Is Not Logged In</h3>
+  </div>
+  <h6>new way to use Structural Directives</h6>
+  @if(isLogedIn){
+  <h3>{{ userName }}</h3>
+  } @else {
+  <h3>User Is Not Logged In (loaded using &#64;else)</h3>
+  }
+  <!-- @if(!isLogedIn){
+  <h3>User Is Not Logged In</h3>
+  } -->
+  <h3 *ngIf="isLogedIn; else message">{{ userName }}</h3>
+  <ng-template #message>
+    <h3>User Is Not Logged In (loaded using ng template)</h3>
+  </ng-template>
+
+  <p>if directives with Number Values</p>
+
+  <button (click)="handleLogin()" *ngIf="countLogin < 4">Log In</button>
+  <h3 *ngIf="countLogin > 3">Exceeded 3 Login attempts</h3>
+
+  @if(countLogin > 3){
+  <h3>Exceeded 3 Login attempts</h3>
+  }@else {
+  <button (click)="handleLogin()">Log In</button>
+  }
+
+  <h3 *ngIf="userRole == 'admin'; else userMessage">Welcome Admin</h3>
+
+  <ng-template #userMessage>
+    <h3>Welcome Member</h3>
+  </ng-template>
+
+  @if(userRole == 'admin'){
+  <h3>Welcome Admin</h3>
+  }@else if(userRole=='member'){
+  <h3>Welcome Member</h3>
+  }
 </div>
