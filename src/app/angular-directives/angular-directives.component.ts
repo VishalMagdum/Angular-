@@ -32,9 +32,15 @@ export class AngularDirectivesComponent {
       role: 'admin',
     });
   }
-  deleteUser(user: object) {
+  deleteUser(index: number) {
     // this.usersObj = this.usersObj.filter((user) => user.id !== userId);
-    let index = this.usersObj.indexOf(user);
+
+    // let index = this.usersObj.indexOf(user);
+    // this.usersObj.splice(index, 1);
+
     this.usersObj.splice(index, 1);
+  }
+  constructor() {
+    console.log(this.usersObj.length);
   }
 }

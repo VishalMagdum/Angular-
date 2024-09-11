@@ -111,7 +111,8 @@
   <h5>{{ users[1] }}</h5>
   <h5>{{ users[2] }}</h5>
 
-  -- 3rd approch to render array using ngFor (old approch) --
+  -- 3rd approch to render array using ngFor (old approch) <br />
+
   <h5 *ngFor="let user of users; let index = index">
     {{ index + 1 }} {{ " " + user }}
   </h5>
@@ -119,18 +120,20 @@
   -- 4th approch to render array using &#64;for(new approch) -- @for(user of
   users;track user){
   <h3>{{ user }}</h3>
-  } --using ngfor (old approch)
+  } --using ngfor (old approch) <br />
+  --count
   <ul>
-    <li *ngFor="let user of usersObj">
-      {{ user.id }} Name: {{ user.name }} Role: {{ user.role }}
+    <li *ngFor="let user of usersObj; let count = count">
+      {{ user.id }}/{{ count }} Name: {{ user.name }} Role: {{ user.role }}
     </li>
   </ul>
 
-  --using &#64;for syntax
+  --using &#64;for syntax <br />
+  --count
   <ul>
-    @for(user of usersObj;track usersObj;){
+    @for(user of usersObj;track usersObj;let i =$index;let count = $count){
     <li>
-      {{ user.id }} Name: {{ user.name }} Role: {{ user.role }}
+      {{ user.id }}/{{ count }} Name: {{ user.name }} Role: {{ user.role }}
       <button (click)="deleteUser(user)">Delete User</button>
     </li>
     }
@@ -138,4 +141,5 @@
 
   <h2>Angular change detection</h2>
   <button (click)="addUser()">Add New User</button>
+  <p>to access index in &#64;for need to access like this let i = $index</p>
 </div>
