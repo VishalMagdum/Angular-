@@ -71,4 +71,71 @@
   }@else if(userRole=='member'){
   <h3>Welcome Member</h3>
   }
+
+  <h1>Ng-Template :-</h1>
+  <p>
+    ng-template is a powerful tool in Angular that allows us to define templates
+    content that can be used later in our application. Unlike other HTML
+    elements, the content inside the ng-template tag is not rendered until it is
+    explicitly called. We can use it when we need it according to our
+    requirements/conditions.
+  </p>
+
+  <ng-template>
+    <p>i am ng-template which is not in use</p>
+  </ng-template>
+
+  <h6 *ngIf="userRole == 'vishal'; else inUseNg"></h6>
+  <ng-template #inUseNg>
+    <p>I am ng-template which is in use</p>
+  </ng-template>
+  <hr />
+  <ng-template #callToAction>
+    <button>Join Now</button>
+  </ng-template>
+
+  <div [ngTemplateOutlet]="callToAction">
+    <h3>Side Bar</h3>
+  </div>
+
+  <div>
+    <h3>Hero</h3>
+  </div>
+
+  <h1>ng-For Directives :-</h1>
+  -- 1st approch to render array --
+  <h5>{{ users }}</h5>
+
+  -- 2nd approch to render array using array index --
+  <h5>{{ users[0] }}</h5>
+  <h5>{{ users[1] }}</h5>
+  <h5>{{ users[2] }}</h5>
+
+  -- 3rd approch to render array using ngFor (old approch) --
+  <h5 *ngFor="let user of users; let index = index">
+    {{ index + 1 }} {{ " " + user }}
+  </h5>
+
+  -- 4th approch to render array using &#64;for(new approch) -- @for(user of
+  users;track user){
+  <h3>{{ user }}</h3>
+  } --using ngfor (old approch)
+  <ul>
+    <li *ngFor="let user of usersObj">
+      {{ user.id }} Name: {{ user.name }} Role: {{ user.role }}
+    </li>
+  </ul>
+
+  --using &#64;for syntax
+  <ul>
+    @for(user of usersObj;track usersObj;){
+    <li>
+      {{ user.id }} Name: {{ user.name }} Role: {{ user.role }}
+      <button (click)="deleteUser(user)">Delete User</button>
+    </li>
+    }
+  </ul>
+
+  <h2>Angular change detection</h2>
+  <button (click)="addUser()">Add New User</button>
 </div>
