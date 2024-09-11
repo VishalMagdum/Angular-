@@ -142,4 +142,17 @@
   <h2>Angular change detection</h2>
   <button (click)="addUser()">Add New User</button>
   <p>to access index in &#64;for need to access like this let i = $index</p>
+
+  <h2>Angular &#64;empty Block</h2>
+
+  <ul>
+    @for(user of usersObj;track usersObj;let i =$index;let count = $count){
+    <li>
+      {{ user.id }}/{{ count }} Name: {{ user.name }} Role: {{ user.role }}
+      <button (click)="deleteUser(user)">Delete User</button>
+    </li>
+    }@empty {
+    <p>No Users Found</p>
+    }
+  </ul>
 </div>
