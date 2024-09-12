@@ -193,4 +193,13 @@
     <p *ngSwitchCase="'member'">Welcome Member</p>
     <p *ngSwitchDefault>Plz Login</p>
   </div>
+
+  --new approch <br />
+  @switch (userRole) { @case ('admin') {
+  <p>Welcome Admin</p>
+  } @case ('member') {
+  <p>Welcome Member</p>
+  } @default {
+  <p>Plz Login</p>
+  } }
 </div>
