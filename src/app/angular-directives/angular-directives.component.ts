@@ -1,6 +1,8 @@
 import {
+  NgClass,
   NgFor,
   NgIf,
+  NgStyle,
   NgSwitch,
   NgSwitchCase,
   NgSwitchDefault,
@@ -19,6 +21,8 @@ import { NgModel } from '@angular/forms';
     NgSwitch,
     NgSwitchCase,
     NgSwitchDefault,
+    NgStyle,
+    NgClass,
   ],
   templateUrl: './angular-directives.component.html',
   styleUrl: './angular-directives.component.css',

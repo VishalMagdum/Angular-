@@ -202,4 +202,33 @@
   } @default {
   <p>Plz Login</p>
   } }
+
+  <h1>Attribute Directives</h1>
+  <div>
+    <h6
+      [style.color]="isLogedIn ? 'green' : 'red'"
+      [style.textTransform]="isLogedIn ? 'lowercase' : 'uppercase'"
+    >
+      Style Attribute Directives
+    </h6>
+
+    --ngStyle approch <br />
+    <h6
+      [ngStyle]="{
+        color: isLogedIn ? 'green' : 'red',
+        textTransform: isLogedIn ? 'lowercase' : 'uppercase'
+      }"
+    >
+      Ng style directives
+    </h6>
+    with use of ngStyle we can use multiple style in one line <br />
+    <br />
+
+    --Class Attribute --1st approch <br />
+    <h3 [class]="isLogedIn ? 'green' : 'red'">Class Attribute Directives</h3>
+    --2nd approch using ngClass<br />
+    <h3 [ngClass]="{ 'green': isLogedIn, 'red': !isLogedIn, }">
+      Ng Class Directives
+    </h3>
+  </div>
 </div>
