@@ -6,6 +6,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 import { NgModel } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { ComponentDataFlowComponent } from "./component-data-flow/component-data-flow.component";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { NgIf } from '@angular/common';
     DataBindingComponent,
     AngularDirectivesComponent,
     NgIf,
-  ],
+    ComponentDataFlowComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
