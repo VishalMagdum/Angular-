@@ -185,4 +185,12 @@
     </li>
     }
   </ul>
+
+  <h2>ng switch case</h2>
+  --old approch <br />
+  <div [ngSwitch]="userRole">
+    <p *ngSwitchCase="'admin'">Welcome Admin</p>
+    <p *ngSwitchCase="'member'">Welcome Member</p>
+    <p *ngSwitchDefault>Plz Login</p>
+  </div>
 </div>

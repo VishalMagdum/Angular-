@@ -1,11 +1,25 @@
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import {
+  NgFor,
+  NgIf,
+  NgSwitch,
+  NgSwitchCase,
+  NgSwitchDefault,
+  NgTemplateOutlet,
+} from '@angular/common';
 import { Component } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'angular-directives',
   standalone: true,
-  imports: [NgIf, NgTemplateOutlet, NgFor],
+  imports: [
+    NgIf,
+    NgTemplateOutlet,
+    NgFor,
+    NgSwitch,
+    NgSwitchCase,
+    NgSwitchDefault,
+  ],
   templateUrl: './angular-directives.component.html',
   styleUrl: './angular-directives.component.css',
 })
