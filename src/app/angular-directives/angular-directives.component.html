@@ -155,4 +155,34 @@
     <p>No Users Found</p>
     }
   </ul>
+
+  <h2>For loop properties First,Last,Even,Odd</h2>
+  --old approch <br />
+  <ul>
+    <li
+      *ngFor="
+        let user of usersObj;
+        let count = count;
+        let first = first;
+        let last = last;
+        let even = even;
+        let odd = odd
+      "
+      [style.backgroundColor]="even ? 'grey' : odd ? 'lightgray' : ''"
+    >
+      isFirstUser {{ first }}| {{ user.id }} Name: {{ user.name }} Role:
+      {{ user.role }} | &nbsp;isLastUser {{ last }}
+    </li>
+  </ul>
+
+  --new approch <br />
+  <ul>
+    @for(user of usersObj;track usersObj;let isFirstUser=$first;let
+    isLastUser=$last;let isEven=$even;let isOdd=$odd){
+    <li [style.backgroundColor]="isEven ? 'grey' : isOdd ? 'lightGrey' : ''">
+      isFirstUser {{ isFirstUser }}| {{ user.id }} Name: {{ user.name }} Role:
+      {{ user.role }} | &nbsp;isLastUser {{ isLastUser }}
+    </li>
+    }
+  </ul>
 </div>

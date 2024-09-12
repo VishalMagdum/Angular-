@@ -14,7 +14,12 @@ export class AngularDirectivesComponent {
   userName: string = 'John Doe';
   countLogin: number = 0;
   userRole: string = 'admin';
-  usersObj: Array<any> = [];
+  usersObj: Array<any> = [
+    { id: 1, name: 'John Doe', role: 'admin' },
+    { id: 2, name: 'Jane Doe', role: 'user' },
+    { id: 3, name: 'John Smith', role: 'admin' },
+    { id: 4, name: 'Jane Smith', role: 'user' },
+  ];
   users: string[] = ['John Doe', 'Jane Doe', 'John Smith', 'Jane Smith'];
   handleLogin() {
     this.countLogin++;
