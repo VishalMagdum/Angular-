@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { PostListComponent } from '../post-list/post-list.component';
 // import ComponentStructureImg from '../../assets/ComponentStructureImg.png';
 @Component({
   selector: 'component-data-flow',
   standalone: true,
-  imports: [],
+  imports: [PostListComponent],
   templateUrl: './component-data-flow.component.html',
   styleUrl: './component-data-flow.component.css',
 })
 export class ComponentDataFlowComponent {
-  // ComponentStructure = require('../../assets/componentStructureImg.png');
+  appPostTitle: string = 'Post 1';
 }
