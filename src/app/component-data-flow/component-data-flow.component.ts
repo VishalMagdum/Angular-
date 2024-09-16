@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PostListComponent } from '../post-list/post-list.component';
 // import ComponentStructureImg from '../../assets/ComponentStructureImg.png';
 @Component({
@@ -10,4 +10,5 @@ import { PostListComponent } from '../post-list/post-list.component';
 })
 export class ComponentDataFlowComponent {
   appPostTitle: string = 'Post 1';
+  @Input() isUserLoggedIn: boolean = false;
 }
