@@ -50,7 +50,15 @@
     [childProperty]="parentProperty". <br />
     --Changes in the parent property will automatically reflect in the child
     component, as Angular's change detection keeps them in sync. <br />
-    --
-    --{{"'@Input()'"}} decorator create bridge between parent and child component to pass data
+    -- --{{ "@Input()" }} decorator create bridge between parent and child
+    component to pass data
+
+    <h2>Child Parent relationship & data flow</h2>
+    We have 2 ways to pass data from child to parent component <br />
+    1. Using ViewChild() decorator <br />
+    2. Using {{ "@Output()" }} Event Emitter decorator <br />
+    <br />
+    <b>1. Using ViewChild() decorator:-</b>
+    <p>{{ childMessage }}</p>
   </div>
 </div>

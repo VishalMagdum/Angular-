@@ -9,4 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class PostListComponent {
   @Input() postListTitle: string = '';
+
+  childMessage: string = 'This is a message from the child component';
 }
