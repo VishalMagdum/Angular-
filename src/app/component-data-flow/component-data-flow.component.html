@@ -43,6 +43,14 @@
 
     <p>--Parent Child relationship & data flow example</p>
     <p>Is User Logged In:-{{ isUserLoggedIn }}</p>
-
+    <h5>How parent child data flow works</h5>
+    --The {{ "@Input()" }} decorator is used to declare the property in the
+    child component that will receive data from the parent. <br />
+    --The data binding happens in the parent component’s template using
+    [childProperty]="parentProperty". <br />
+    --Changes in the parent property will automatically reflect in the child
+    component, as Angular's change detection keeps them in sync. <br />
+    --
+    --{{"'@Input()'"}} decorator create bridge between parent and child component to pass data
   </div>
 </div>
