@@ -70,5 +70,133 @@
     <br />
 
     <b> 2. Using {{ "@Output()" }} Event Emitter decorator:-</b>
+
+    <div>
+      <table border="1px" cellpadding="10" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>{{ "@Output" }} with EventEmitter</th>
+            <th>ViewChild</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Purpose</strong></td>
+            <td>
+              To <strong>emit events</strong> from the child component to notify
+              the parent.
+            </td>
+            <td>
+              To <strong>access</strong> a child component's public properties
+              and methods directly from the parent component.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Use Case</strong></td>
+            <td>
+              When the child component needs to notify the parent of an event or
+              send data based on user interaction (e.g., button click).
+            </td>
+            <td>
+              When the parent component needs to control or access the child
+              component directly (e.g., call methods or retrieve properties).
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Communication Type</strong></td>
+            <td>
+              <strong>Event-based</strong> communication: Parent listens for an
+              event emitted by the child.
+            </td>
+            <td>
+              <strong>Reference-based</strong> communication: Parent gets a
+              reference to the child component instance.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Triggering Action</strong></td>
+            <td>
+              Data is sent when the child <strong>explicitly emits</strong> an
+              event.
+            </td>
+            <td>
+              The parent <strong>calls methods or reads properties</strong> from
+              the child component directly when needed.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Syntax</strong></td>
+            <td>
+              Uses <code>{{ "@Output" }}</code> decorator and
+              <code>EventEmitter</code>.
+            </td>
+            <td>
+              Uses <code>{{ "@ViewChild" }}</code> decorator to reference the
+              child component.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Example Usage</strong></td>
+            <td>
+              <code
+                >&lt;app-child
+                (dataEmitter)="receiveData($event)"&gt;&lt;/app-child&gt;</code
+              >
+            </td>
+            <td>
+              Accessing the child:
+              <code
+                >{{ "@ViewChild(ChildComponent)" }} childComponent:
+                ChildComponent;</code
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Data Flow Direction</strong></td>
+            <td>One-way (child to parent).</td>
+            <td>Parent accesses and manipulates child directly.</td>
+          </tr>
+          <tr>
+            <td><strong>Flexibility</strong></td>
+            <td>
+              More flexible, allowing data to be emitted any number of times
+              based on user interaction.
+            </td>
+            <td>
+              Limited to access control; more suitable for directly invoking
+              child’s methods.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Lifecycle Timing</strong></td>
+            <td>
+              Emits data during user interaction or lifecycle changes (anytime).
+            </td>
+            <td>
+              Requires the child to be fully initialized, typically used after
+              <code>ngAfterViewInit</code>.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Common Use Case</strong></td>
+            <td>
+              Child emits data like form values, button clicks, or other events
+              that the parent needs to react to.
+            </td>
+            <td>
+              Parent calls methods on the child, like resetting forms or getting
+              a child component's internal state directly.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <b
+      >3.Transfer data form parent to child using Ng-content (Content
+      Projection)</b
+    >
+      
   </div>
 </div>
