@@ -11,6 +11,7 @@ import { PostListComponent } from '../post-list/post-list.component';
 export class ComponentDataFlowComponent implements AfterViewInit {
   appPostTitle: string = 'Post 1';
   childMessage: string = '';
+  childToParentMsg: string = '';
   @Input() isUserLoggedIn: boolean = false;
 
   // -----child to paraent data flow using @ViewChild-----
@@ -25,4 +26,11 @@ export class ComponentDataFlowComponent implements AfterViewInit {
     this.childMessage = this.childComp.childMessage;
   }
   //----------------------------------------------------
+
+  // -----parent to child data flow using @Output-emitter event-----
+  reciveMsg(message: string) {
+    console.log('reciveMsg :-', message);
+    this.childToParentMsg = message;
+  }
+  // ----------------------------------------------------
 }
