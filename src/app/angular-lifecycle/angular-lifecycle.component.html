@@ -1,0 +1,58 @@
+<br />
+<div [style.border]="'1px solid grey'"></div>
+
+<h2>Angular Lifecycle</h2>
+<p>
+  --Lifecycle hooks are special method provided by angular that allows us to tap
+  into different stages of a component's lifecycle. From the moment a component
+  is created to the moment it is destroyed, Angular provides hooks that let us
+  run custom logic at specific times. These hooks can be used to perform tasks
+  like setting up the component, fetching data, or cleaning up resources.
+</p>
+<p>--We can divide angular life cycle hooks in 3 stages as flollows:</p>
+
+<ul>
+  <li>
+    Initialization : <br />
+    Some time we need to set-up/fetch some data or state as soon as the
+    component is created.
+  </li>
+  <li>
+    Change Detection: <br />
+    We might need to perfome actions when data-bound properties change.
+  </li>
+  <li>
+    Cleanup: <br />
+    It's important to clean up resources or subscriptions to avoid memory leaks
+    when the component is destroyed.
+  </li>
+
+  <div>
+    <h4>Here is a lsit of some angular lifecycle hooks</h4>
+    <ul>
+      <li>ngOnInit : Called once the component is initialized.</li>
+      <li>
+        ngOnChanges : Called every time the input properties of a component
+        changes.
+      </li>
+      <li>ngDoCheck : Called during every change detection run</li>
+      <li>
+        ngAfterContentInit: Called once after the component's content has been
+        initialized.
+      </li>
+      <li>
+        ngAfterContentChecked:Called after every check of the component's
+        content.
+      </li>
+      <li>
+        ngAfterViewInit: Called once after the component's view (and child
+        views) has been initialized.
+      </li>
+      <li>
+        ngAfterViewChecked: Called after every check of the component's view
+        (and child views).
+      </li>
+      <li>ngOnDestroy: Called just before the component is destroyed</li>
+    </ul>
+  </div>
+</ul>
