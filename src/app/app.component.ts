@@ -7,7 +7,6 @@ import { AngularDirectivesComponent } from './angular-directives/angular-directi
 import { NgModel } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { ComponentDataFlowComponent } from './component-data-flow/component-data-flow.component';
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,8 +17,8 @@ import { ComponentDataFlowComponent } from './component-data-flow/component-data
     DataBindingComponent,
     AngularDirectivesComponent,
     NgIf,
-    ComponentDataFlowComponent
-],
+    ComponentDataFlowComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { PostListComponent } from '../post-list/post-list.component';
+import { CardComponent } from "../card/card.component";
 // import ComponentStructureImg from '../../assets/ComponentStructureImg.png';
 @Component({
   selector: 'component-data-flow',
   standalone: true,
-  imports: [PostListComponent],
+  imports: [PostListComponent, CardComponent],
   templateUrl: './component-data-flow.component.html',
   styleUrl: './component-data-flow.component.css',
 })

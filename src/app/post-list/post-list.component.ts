@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CardComponent } from "../card/card.component";
 
 @Component({
   selector: 'post-list',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.css',
 })
