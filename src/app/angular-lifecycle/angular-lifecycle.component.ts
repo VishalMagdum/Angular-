@@ -6,11 +6,12 @@ import {
 } from '@angular/core';
 import { PostListComponent } from '../post-list/post-list.component';
 import { NgComponentOutlet } from '@angular/common';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-angular-lifecycle',
   standalone: true,
-  imports: [PostListComponent, NgComponentOutlet],
+  imports: [PostListComponent, NgComponentOutlet, ProfileComponent],
   templateUrl: './angular-lifecycle.component.html',
   styleUrl: './angular-lifecycle.component.css',
 })
@@ -31,5 +32,9 @@ export class AngularLifecycleComponent {
   removeComponent() {
     // this.viewContainer.clear();
     this.viewContainer.element.nativeElement.innerHTML = '';
+  }
+  userName: string = 'Vishal';
+  changeUserName() {
+    this.userName = 'Vishal Magdum';
   }
 }
