@@ -28,4 +28,8 @@ export class AngularLifecycleComponent {
     );
     this.viewContainer.element.nativeElement.appendChild(text);
   }
+  removeComponent() {
+    // this.viewContainer.clear();
+    this.viewContainer.element.nativeElement.innerHTML = '';
+  }
 }
