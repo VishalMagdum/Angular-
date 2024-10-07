@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +7,12 @@ import { Component, Input, OnChanges } from '@angular/core';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
 })
-export class ProfileComponent implements OnChanges {
+export class ProfileComponent implements OnChanges, OnInit {
   @Input() puserName: string = '';
   ngOnChanges() {
     console.log('onChanges triggered');
+  }
+  ngOnInit() {
+    console.log('onInit triggered');
   }
 }
