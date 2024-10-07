@@ -14,5 +14,10 @@ export class ProfileComponent implements OnChanges, OnInit {
   }
   ngOnInit() {
     console.log('onInit triggered');
+    console.log('username onInit', this.puserName);
+  }
+  constructor() {
+    console.log('constructor triggered');
+    console.log('username in constructor', this.puserName);
   }
 }
